@@ -1,0 +1,561 @@
+/* =========================
+   RESET & FORZADO DE COLOR DE FONDO
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    /* Evita que la barra de navegación corte contenido al scrollear */
+    scroll-padding-top: 140px; 
+    background-color: #5A2875 !important;
+}
+
+/* Forzamos el morado en el body y cualquier contenedor global de Bootstrap */
+body, .container-fluid, main {
+    background-color: #5A2875 !important;
+    background: #5A2875 !important;
+    color: white !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x:hidden;
+}
+
+/* Evitamos que Bootstrap pinte de negro los textos globales */
+h1, h2, h3, h4, h5, h6, p, span, a, label {
+    color: white;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+#barra{
+    background:#5A2875 !important; /* Forzado para que no herede transparencias de Bootstrap */
+    padding:15px 40px;
+    box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-right:15px;
+}
+
+.marca{
+    font-size:3rem;
+    font-weight:bold;
+    color:white !important;
+    text-decoration:none;
+    text-shadow:3px 3px 6px black;
+}
+
+.marca span{
+    color:chartreuse !important;
+}
+
+.nav-link{
+    color:white !important;
+    font-size:1.1rem;
+    font-weight:600;
+    margin-left:20px;
+    transition:.3s;
+}
+
+.nav-link:hover{
+    color:chartreuse !important;
+}
+
+/* =========================
+   HERO (INICIO)
+========================= */
+
+#home{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background-color: #5A2875 !important;
+    padding: 120px 0 60px 0;
+}
+
+.contenedor-principal{
+    max-width:1400px;
+    margin:auto;
+    padding:0 50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:80px;
+}
+
+.contenido-principal{
+    flex:1;
+}
+
+.titulo-principal{
+    font-size:clamp(3rem,6vw,5rem);
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.titulo-principal span{
+    color:chartreuse !important;
+}
+
+.contenido-principal h3{
+    font-size:2rem;
+    margin-bottom:25px;
+    color: white;
+}
+
+.contenido-principal p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:35px;
+    color: white;
+}
+
+.contenedor-principal img{
+    width:480px;
+    height:600px;
+    object-fit:cover;
+    border-radius:205px;
+    box-shadow:0 0 25px rgba(0,255,255,.3);
+}
+
+.fotomiaaa{
+    mask-image: linear-gradient(black 70%, transparent);
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn-cv button,
+.btn-enviar,
+.btn-visitar button{
+    background:chartreuse !important;
+    color:#5A2875 !important;
+    border:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-cv button{
+    width:260px;
+    height:60px;
+    font-size:1.1rem;
+}
+
+.btn-cv button:hover,
+.btn-enviar:hover,
+.btn-visitar button:hover{
+    transform:translateY(-3px);
+    background:white !important;
+    color: #5A2875 !important;
+}
+
+/* =========================
+   TITULOS DE SECCIÓN
+========================= */
+
+.titulo{
+    font-size:clamp(2.5rem,5vw,4rem);
+    text-align:center;
+    margin-bottom:40px;
+    font-weight:bold;
+    color: white;
+}
+
+.titulo span{
+    color:chartreuse !important;
+}
+
+/* =========================
+   SOBRE MI (DISEÑO MEJORADO EN REJILLA)
+========================= */
+
+#sobre-mi{
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+
+    background-color: #5A2875 !important;
+}
+
+.contenedor-secundario-sobremi{
+    max-width:1200px;
+    margin:auto;
+    padding:0 30px;
+    width: 100%;
+}
+
+.contenedor-sobremi{
+    text-align: center;
+    width: 100%;
+}
+
+.subtitulo-sobremi{
+    font-size:1.25rem;
+    line-height:1.8;
+    margin-bottom:50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+/* Tarjetas individuales de pilares profesionales */
+.tarjeta-sobremi{
+    background: #6b3386 !important;
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+    transition: .3s ease;
+    height: 100%; /* Hace que todas midan lo mismo */
+    text-align: center;
+}
+
+.tarjeta-sobremi:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.3);
+}
+
+.tarjeta-sobremi i{
+    font-size: 2.5rem;
+    color: chartreuse;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.tarjeta-sobremi h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.tarjeta-sobremi p{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e3d5eb;
+    margin-bottom: 0;
+}
+
+/* =========================
+   STACK (TECNOLOGÍAS)
+========================= */
+
+#stack{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 50px;
+    background-color: #5A2875 !important;
+}
+
+.stack-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-bottom:60px;
+}
+
+.stack-item{
+    background:#6b3386 !important;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.stack-item h3{
+    color:chartreuse !important;
+    margin-bottom:15px;
+}
+
+.contenedor-iconos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+}
+
+.iconos{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.iconos:hover{
+    transform:translateY(-10px);
+}
+
+/* =========================
+   PROYECTOS
+========================= */
+
+#mis-proyectos{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+   
+    background-color: #5A2875 !important;
+}
+
+.contenedor-cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    width: 100%;
+}
+
+.card{
+    width:340px;
+    background:#6b3386 !important; 
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit: cover;
+}
+
+.card-body{
+    padding:25px;
+    background: transparent !important;
+}
+
+.card-body h2{
+    color:white !important;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.card-body p{
+    color:#e8e8e8 !important;
+    line-height:1.6;
+}
+
+.btn-visitar{
+    padding:20px;
+    text-align:center;
+    background: transparent !important;
+}
+
+.btn-visitar button{
+    width:140px;
+    height:45px;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+
+#contacto{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    
+    background-color: #5A2875 !important;
+}
+
+.contenedor-contacto{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  
+}
+
+.formulario{
+    flex:1;
+    max-width:700px;
+    background:#6b3386 !important;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    margin-bottom:10px;
+    font-weight:600;
+    color: white;
+}
+
+.form-control{
+    border:2px solid chartreuse !important;
+    padding:12px;
+    background-color: white !important;
+    color: #333 !important;
+}
+
+.btn-enviar{
+    width:100%;
+    height:60px;
+    margin-top:15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#2d123d !important;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.contenido-footer h2{
+    font-size:2rem;
+    color: white;
+}
+
+.contenido-footer h5{
+    margin-top:10px;
+    color:#d4d4d4;
+}
+
+.redes{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:25px;
+}
+
+.redes a{
+    color:white !important;
+    font-size:1.8rem;
+    transition:.3s;
+}
+
+.redes a:hover{
+    color:chartreuse !important;
+    transform:scale(1.2);
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.btn-whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    background:#25D366 !important;
+    color:white !important;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    transition: 0.5s all;
+
+}
+
+.btn-whatsapp:hover{
+    transform:scale(1.2);
+    color:white !important;
+    transition:0.5s  all;
+    border:3px solid rgb(255, 255, 255)
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .contenedor-principal,
+    .contenedor-secundario-sobremi,
+    .contenedor-contacto{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .contenedor-principal img {
+        width:300px;
+        height:auto;
+    }
+
+    .marca{
+        font-size:2rem;
+    }
+}
+
+@media(max-width:768px){
+
+    #barra{
+        padding:15px;
+    }
+
+    .logo{
+        display:none;
+    }
+
+    .contenedor-principal,
+    .contenedor-secundario-sobremi{
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .titulo-principal{
+        font-size:2.5rem;
+    }
+
+    .contenido-principal h3{
+        font-size:1.4rem;
+    }
+
+    .contenido-principal p{
+        font-size:1rem;
+    }
+
+    .btn-cv button{
+        width:100%;
+    }
+
+    .card{
+        width:100%;
+    }
+    
+    .tarjeta-sobremi {
+        margin-bottom: 15px;
+    }
+}
