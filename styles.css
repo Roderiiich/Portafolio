@@ -10,12 +10,11 @@
 
 html{
     scroll-behavior:smooth;
-    /* Evita que la barra de navegación corte contenido al scrollear */
     scroll-padding-top: 140px; 
     background-color: #5A2875 !important;
 }
 
-/* Forzamos el morado en el body y cualquier contenedor global de Bootstrap */
+
 body, .container-fluid, main {
     background-color: #5A2875 !important;
     background: #5A2875 !important;
@@ -24,7 +23,7 @@ body, .container-fluid, main {
     overflow-x:hidden;
 }
 
-/* Evitamos que Bootstrap pinte de negro los textos globales */
+
 h1, h2, h3, h4, h5, h6, p, span, a, label {
     color: white;
 }
@@ -41,7 +40,7 @@ header{
 }
 
 #barra{
-    background:#5A2875 !important; /* Forzado para que no herede transparencias de Bootstrap */
+    background:#5A2875 !important; 
     padding:15px 40px;
     box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
@@ -79,7 +78,7 @@ header{
 }
 
 /* =========================
-   HERO (INICIO)
+   HOME (INICIO)
 ========================= */
 
 #home{
@@ -103,9 +102,15 @@ header{
 .contenido-principal{
     flex:1;
 }
+.holasoy{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
 
 .titulo-principal{
-    font-size:clamp(3rem,6vw,5rem);
+    font-size:100px;
     font-weight:bold;
     margin-bottom:20px;
 }
@@ -184,9 +189,7 @@ header{
     color:chartreuse !important;
 }
 
-/* =========================
-   SOBRE MI (DISEÑO MEJORADO EN REJILLA)
-========================= */
+
 
 #sobre-mi{
     min-height: 70vh;
@@ -218,25 +221,26 @@ header{
     color: white;
 }
 
-/* Tarjetas individuales de pilares profesionales */
+
 .tarjeta-sobremi{
     background: #6b3386 !important;
     padding: 35px 25px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,.2);
     transition: .3s ease;
-    height: 100%; /* Hace que todas midan lo mismo */
+    height: 100%; 
     text-align: center;
 }
 
 .tarjeta-sobremi:hover{
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0,0,0,.3);
+    filter: drop-shadow(0 4px 8px rgb(255, 255, 255));
 }
 
 .tarjeta-sobremi i{
     font-size: 2.5rem;
-    color: chartreuse;
+    color: rgb(127, 255, 0);
     display: inline-block;
     margin-bottom: 15px;
 }
@@ -293,18 +297,23 @@ header{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:30px;
+    align-items:center; 
+    gap:20px;           
 }
 
-.iconos{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-    transition:.3s;
+
+.contenedor-iconos img {
+    width: 90px;          
+    height: 90px;        
+    object-fit: contain;  
+    padding: 2px;         
+    transition: .3s ease; 
 }
 
-.iconos:hover{
-    transform:translateY(-10px);
+
+.contenedor-iconos img:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 4px 8px rgb(255, 255, 255)); 
 }
 
 /* =========================
@@ -315,7 +324,6 @@ header{
     min-height: 10vh;
     display: flex;
     align-items: center;
-   
     background-color: #5A2875 !important;
 }
 
@@ -325,46 +333,58 @@ header{
     justify-content:center;
     gap:30px;
     width: 100%;
+    padding:50px;
 }
 
 .card{
-    width:340px;
+    width:390px;
     background:#6b3386 !important; 
-    border:none;
-    border-radius:20px;
-    overflow:hidden;
+    border-radius:100px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);
-    transition:.3s;
+    transition:0.3s;
+    padding:15px; 
+    display: flex;
+    flex-direction: column;
+    height: auto; 
 }
 
 .card:hover{
     transform:translateY(-10px);
+    box-shadow: 0 0 25px rgb(255, 255, 255);
 }
 
 .card img{
     width:100%;
-    height:220px;
+    
+    height: 200px;
     object-fit: cover;
+    border-radius: 12px; 
 }
 
 .card-body{
-    padding:25px;
+    
+    padding: 15px 5px;
     background: transparent !important;
+    
+   
+    flex-grow: 1; 
 }
 
 .card-body h2{
     color:white !important;
     font-weight:bold;
-    margin-bottom:15px;
+    margin-bottom:10px; /* Reducido de 15px */
 }
 
 .card-body p{
     color:#e8e8e8 !important;
-    line-height:1.6;
+    line-height:1.5;
+    font-size: 0.95rem; 
 }
 
 .btn-visitar{
-    padding:20px;
+    
+    padding: 10px 0 0 0;
     text-align:center;
     background: transparent !important;
 }
@@ -382,7 +402,7 @@ header{
     min-height: 100vh;
     display: flex;
     align-items: center;
-    
+   padding: 10px;
     background-color: #5A2875 !important;
 }
 
@@ -392,16 +412,18 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
+    
   
 }
 
 .formulario{
     flex:1;
-    max-width:700px;
+    max-width:800px;
     background:#6b3386 !important;
     padding:25px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);
+    width:80%;
 }
 
 .form-group{
@@ -557,5 +579,16 @@ header{
     
     .tarjeta-sobremi {
         margin-bottom: 15px;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-center: center; /* Asegura el alineado del bloque */
+    }
+    .navbar-nav .nav-item {
+        text-align: center;  /* Centra el texto y los iconos de cada opción */
+        padding: 8px 0;      /* Les da un poquito de espacio vertical para que no se vean amontonados */
     }
 }

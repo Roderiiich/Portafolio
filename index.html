@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="img/roderich-logo.png" />
     
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
+    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,8 +27,7 @@
     ></script>
   </head>
   <body>
-
-    <header>
+<header>
       <nav class="navbar navbar-expand-lg navbar-dark" id="barra">
         <div class="container-fluid">
           <img class="logo" src="img/roderichportafolio.jpeg" alt="Roderich Logo" />
@@ -47,28 +49,30 @@
           </button>
   
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
+            <!-- AQUÍ AGREGAMOS 'text-center' PARA CENTRAR TODO EN MÓVILES -->
+            <ul class="navbar-nav text-center">
+              <!-- 'mb-2' da separación en vertical en celular, 'mb-lg-0' lo quita en PC -->
+              <li class="nav-item mb-2 mb-lg-0">
                 <a class="nav-link" href="#home">
                   <i class="bi bi-house-door"></i> Inicio
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mb-2 mb-lg-0">
                 <a class="nav-link" href="#sobre-mi">
                   <i class="bi bi-person-bounding-box"></i> Sobre Mí
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mb-2 mb-lg-0">
                 <a class="nav-link" href="#stack">
                   <i class="bi bi-cpu"></i> Tecnologías
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mb-2 mb-lg-0">
                 <a class="nav-link" href="#mis-proyectos">
                   <i class="bi bi-terminal"></i> Proyectos
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mb-2 mb-lg-0">
                 <a class="nav-link" href="#contacto">
                   <i class="bi bi-phone-vibrate"></i> Contacto
                 </a>
@@ -87,7 +91,8 @@
       <section id="home">
         <div class="contenedor-principal">
           <div class="contenido-principal">
-            <h1 class="titulo-principal">Soy <span>Rodrigo</span> Cortés</h1>
+            <span class="holasoy">Hola , soy</span>
+            <h1 class="titulo-principal"><span>Rodrigo</span> Cortés Cartes</h1>
             <h3>Ingeniero Informático en Formación</h3>
             <p>
               Soy un estudiante apasionado de Ingeniería Informática con un fuerte
@@ -111,10 +116,7 @@
           <div class="contenedor-sobremi">
             <h1 class="titulo">Sobre <span>Mi</span></h1>
             <p class="subtitulo-sobremi">
-              Me especializo en el desarrollo de aplicaciones web y de escritorio,
-              utilizando tecnologías como HTML5, CSS3, Bootstrap, Windows Form y
-              Java Swing. Además, tengo experiencia en lenguajes de programación
-              como C# y Java, y en frameworks como ASP.NET Core.
+              Desarrollador de software enfocado en la creación de aplicaciones web y de escritorio eficientes. Con dominio en lenguajes como C# y Java, me apasiona conectar arquitecturas robustas en el backend con interfaces de usuario limpias, responsivas y atractivas utilizando Bootstrap y Tailwind CSS.
             </p>
 
             <div class="row g-4 mt-4 justify-content-center">
@@ -152,41 +154,49 @@
             <div class="stack-item">
               <h3>Lenguajes</h3>
               <div class="contenedor-iconos">
-                <img class="iconos" src="img/java.png" alt="Java" title="Java">
-                <img class="iconos" src="img/csharp.png" alt="C#" title="C#">
-                <img class="iconos" src="img/js.png" alt="JavaScript" title="JavaScript">
-                <img class="iconos" src="img/python.png" alt="Python" title="Python">
-                <img class="iconos" src="img/php.png" alt="Php" title="Php">
+              
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+          
+                
               </div>
             </div>
 
             <div class="stack-item">
               <h3>Frameworks</h3>
               <div class="contenedor-iconos">
-                <img class="iconos" src="img/spring.png" alt="Spring" title="Spring Boot">
-                <img class="iconos" src="img/asp.net.logo.png" alt="ASP.NET" title="ASP.NET Core">
-                <img class="iconos" src="img/laravel.png" alt="ASP.NET" title="ASP.NET Core">
-                <img class="iconos" src="img/django.png" alt="ASP.NET" title="ASP.NET Core">
+                
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-plain.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" />
+          
               </div>
             </div>
 
             <div class="stack-item">
               <h3>Front-End</h3>
               <div class="contenedor-iconos">
-                <img class="iconos" src="img/html.png" alt="HTML" title="HTML5">
-                <img class="iconos" src="img/cs1.png" alt="CSS" title="CSS3">
-                <img class="iconos" src="img/boostrap.png" alt="Bootstrap" title="Bootstrap">
-                <img class="iconos" src="img/tailwind.png" alt="Tailwind" title="Tailwind CSS">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" />
+            
               </div>
             </div>
 
             <div class="stack-item">
               <h3>BD & Móvil</h3>
               <div class="contenedor-iconos">
-                <img class="iconos" src="img/Oracle-Logo-Transparent-Images.png" alt="Oracle" title="Oracle">
-                <img class="iconos" src="img/MySQL-Logo.png" alt="MySQL" title="MySQL">
-                <img class="iconos" src="img/android.png" alt="Android" title="Android">
-                <img class="iconos" src="img/jetpack-compose.png" alt="Android" title="Android">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />
+          
               </div>
             </div>
           </div>
@@ -248,7 +258,8 @@
               <div class="card-body">
                 <h2>Patitas y Huellas</h2>
                 <p>
-                  Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros, así como navegar entre vistas mediante una barra de navegación
+                  Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre
+                   mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros, así como navegar entre vistas mediante una barra de navegación
                 </p>
               </div>
               <div class="btn-visitar">
