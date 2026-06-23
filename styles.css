@@ -45,14 +45,25 @@ header{
     box-shadow:0 4px 15px rgba(0,0,0,.2);
 }
 
-.logo{
-    width:70px;
-    height:70px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-right:15px;
+/* =========================
+   LOGO CON MÁXIMO ZOOM (SIN TEXTO)
+========================= */
+.logo {
+    width: 45px;                  
+    height: 45px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center 15%; 
+    transform: scale(1.7);        
+    border: 2px solid chartreuse; 
+    margin:20px 30px;           
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
-
+.logo:hover {
+    transform: scale(1.90) ; 
+   
+}
 .marca{
     font-size:3rem;
     font-weight:bold;
@@ -68,13 +79,16 @@ header{
 .nav-link{
     color:white !important;
     font-size:1.1rem;
-    font-weight:600;
+    font-weight:bold;
     margin-left:20px;
-    transition:.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-link:hover{
     color:chartreuse !important;
+    transform:scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 /* =========================
@@ -399,15 +413,15 @@ header{
 ========================= */
 
 #contacto{
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
-   padding: 10px;
+    padding: 50px;
     background-color: #5A2875 !important;
 }
 
 .contenedor-contacto{
-    max-width:600px;
+    max-width:700px;
     margin:auto;
     display:flex;
     align-items:center;
@@ -418,12 +432,12 @@ header{
 
 .formulario{
     flex:1;
-    max-width:800px;
+    width:100%;
     background:#6b3386 !important;
-    padding:25px;
+    padding:15px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);
-    width:80%;
+    
 }
 
 .form-group{
