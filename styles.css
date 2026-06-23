@@ -1,5 +1,5 @@
 /* =========================
-   RESET & FORZADO DE COLOR DE FONDO
+   RESETS DE ESTILOS
 ========================= */
 
 *{
@@ -44,7 +44,7 @@ header{
 }
 
 /* =========================
-   LOGO CON MÁXIMO ZOOM (SIN TEXTO)
+   LOGO CON MÁXIMO ZOOM 
 ========================= */
 .logo {
     width: 45px;                  
@@ -490,7 +490,7 @@ header{
 }
 
 /* =========================
-   WHATSAPP
+   WHATSAPP BTN
 ========================= */
 
 .btn-whatsapp{
@@ -523,7 +523,14 @@ header{
 ========================= */
 
 @media(max-width:992px){
-    .contenedor-principal,
+
+    
+    #home .contenedor-principal {
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 40px; 
+    }
+
     .contenedor-secundario-sobremi,
     .contenedor-contacto{
         flex-direction:column;
@@ -533,6 +540,7 @@ header{
     .contenedor-principal img {
         width:300px;
         height:auto;
+        margin-bottom: 20px; 
     }
 
     .marca{
