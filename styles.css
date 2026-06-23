@@ -14,7 +14,6 @@ html{
     background-color: #5A2875 !important;
 }
 
-
 body, .container-fluid, main {
     background-color: #5A2875 !important;
     background: #5A2875 !important;
@@ -22,7 +21,6 @@ body, .container-fluid, main {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x:hidden;
 }
-
 
 h1, h2, h3, h4, h5, h6, p, span, a, label {
     color: white;
@@ -58,12 +56,12 @@ header{
     border: 2px solid chartreuse; 
     margin:20px 30px;           
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
 }
+
 .logo:hover {
-    transform: scale(1.90) ; 
-   
+    transform: scale(1.90); 
 }
+
 .marca{
     font-size:3rem;
     font-weight:bold;
@@ -87,8 +85,6 @@ header{
 .nav-link:hover{
     color:chartreuse !important;
     transform:scale(1.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
 }
 
 /* =========================
@@ -116,6 +112,7 @@ header{
 .contenido-principal{
     flex:1;
 }
+
 .holasoy{
     font-size: 40px;
     margin-bottom: 10px;
@@ -150,7 +147,6 @@ header{
     width:580px;
     height:700px;
     object-fit:cover;
-    
     box-shadow:0 0 25px rgba(0,255,255,.3);
 }
 
@@ -177,7 +173,6 @@ header{
     width:260px;
     height:60px;
     font-size:1.1rem;
-   
 }
 
 .btn-cv button:hover,
@@ -204,13 +199,14 @@ header{
     color:chartreuse !important;
 }
 
-
+/* =========================
+   SOBRE MI
+========================= */
 
 #sobre-mi{
     min-height: 70vh;
     display: flex;
     align-items: center;
-
     background-color: #5A2875 !important;
 }
 
@@ -235,7 +231,6 @@ header{
     margin-right: auto;
     color: white;
 }
-
 
 .tarjeta-sobremi{
     background: #6b3386 !important;
@@ -293,7 +288,6 @@ header{
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
     margin-bottom:60px;
-    
 }
 
 .stack-item{
@@ -317,7 +311,6 @@ header{
     gap:20px;           
 }
 
-
 .contenedor-iconos img {
     width: 90px;          
     height: 90px;        
@@ -325,7 +318,6 @@ header{
     padding: 2px;         
     transition: .3s ease; 
 }
-
 
 .contenedor-iconos img:hover {
     transform: translateY(-8px);
@@ -362,7 +354,6 @@ header{
     flex-direction: column;
     height: auto; 
     border-radius: 40px !important;
-
 }
 
 .card:hover{
@@ -371,14 +362,15 @@ header{
 }
 
 .card img{
-    width:100%;
+    width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: contain; /* ¡CAMBIO CLAVE! Muestra la imagen completa sin recortar */
+    background-color: #ffffff; /* Fondo oscuro estético para rellenar los bordes si la foto es transparente o pequeña */
+    padding: 10px; /* Un pequeño margen para que el logo/imagen respire dentro de la tarjeta */
     border-radius: 40px; 
 }
 
 .card-body{
-    
     padding: 15px 5px;
     background: transparent !important;
     flex-grow: 1; 
@@ -387,7 +379,7 @@ header{
 .card-body h2{
     color:white !important;
     font-weight:bold;
-    margin-bottom:10px; /* Reducido de 15px */
+    margin-bottom:10px;
 }
 
 .card-body p{
@@ -397,7 +389,6 @@ header{
 }
 
 .btn-visitar{
-    
     padding: 10px 0 0 0;
     text-align:center;
     background: transparent !important;
@@ -426,8 +417,6 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    
-  
 }
 
 .formulario{
@@ -437,7 +426,6 @@ header{
     padding:15px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.3);
-    
 }
 
 .form-group{
@@ -522,14 +510,12 @@ header{
     z-index:999;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
     transition: 0.5s all;
-
 }
 
 .btn-whatsapp:hover{
     transform:scale(1.2);
     color:white !important;
-    transition:0.5s  all;
-    border:3px solid rgb(255, 255, 255)
+    border:3px solid rgb(255, 255, 255);
 }
 
 /* =========================
@@ -537,7 +523,6 @@ header{
 ========================= */
 
 @media(max-width:992px){
-
     .contenedor-principal,
     .contenedor-secundario-sobremi,
     .contenedor-contacto{
@@ -555,8 +540,17 @@ header{
     }
 }
 
-@media(max-width:768px){
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center; 
+    }
+    .navbar-nav .nav-item {
+        text-align: center;  
+        padding: 8px 0;      
+    }
+}
 
+@media(max-width:768px){
     #barra{
         padding:15px;
     }
@@ -593,16 +587,5 @@ header{
     
     .tarjeta-sobremi {
         margin-bottom: 15px;
-    }
-}
-
-
-@media (max-width: 991.98px) {
-    .navbar-nav {
-        text-center: center; /* Asegura el alineado del bloque */
-    }
-    .navbar-nav .nav-item {
-        text-align: center;  /* Centra el texto y los iconos de cada opción */
-        padding: 8px 0;      /* Les da un poquito de espacio vertical para que no se vean amontonados */
     }
 }
