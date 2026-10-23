@@ -163,13 +163,10 @@ header {
 
 .contenido-principal {
     flex: 1;
-    background: var(--bg-surface) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
     padding: 35px 30px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    
+    
 }
 
 .holasoy {
