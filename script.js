@@ -103,125 +103,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==========================================================================
-// ESTELA ESTILO VAPOR / HUMO NEÓN INTENSO EN CURSOR
-// ==========================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('trail-canvas');
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    const resizeCanvas = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    const colors = [
-        { r: 59, g: 130, b: 246 },  /* var(--accent-blue) */
-        { r: 37, g: 99, b: 235 },   /* var(--primary-blue) */
-        { r: 6, g: 182, b: 212 }    /* Cyan neón */
-    ];
-
-    window.addEventListener('mousemove', (e) => {
-        for (let i = 0; i < 3; i++) {
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            particles.push({
-                x: e.clientX + (Math.random() - 0.5) * 6,
-                y: e.clientY + (Math.random() - 0.5) * 6,
-                size: Math.random() * 8 + 8,
-                color: color,
-                alpha: 0.75,
-                vx: (Math.random() - 0.5) * 1.2,
-                vy: (Math.random() - 0.5) * 1.2 - 0.3,
-                growth: 0.4,
-                decay: 0.02
-            });
-        }
-    });
-
-    const animate = () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < particles.length; i++) {
-            let p = particles[i];
-
-            p.x += p.vx;
-            p.y += p.vy;
-            p.size += p.growth;
-            p.alpha -= p.decay;
-
-            if (p.alpha <= 0) {
-                particles.splice(i, 1);
-                i--;
-                continue;
-            }
-
-            ctx.save();
-            ctx.globalAlpha = p.alpha;
-            ctx.shadowBlur = 15;
-            ctx.shadowColor = `rgb(${p.color.r}, ${p.color.g}, ${p.color.b})`;
-
-            let gradient = ctx.createRadialGradient(
-                p.x, p.y, 0,
-                p.x, p.y, p.size
-            );
-
-            gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0.9)`);
-            gradient.addColorStop(0.4, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0.5)`);
-            gradient.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
-
-            ctx.fillStyle = gradient;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.restore();
-        }
-
-        requestAnimationFrame(animate);
-    };
-
-    animate();
-});
 
 // ==========================================================================
-// FONDO ANIMADO VISIBLE DE NODOS NEÓN
+// FONDO ANIMADO DE NODOS NEÓN (EJECUCIÓN DIRECTA)
 // ==========================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
+function initBgCanvas() {
     const bgCanvas = document.getElementById('bg-canvas');
     if (!bgCanvas) return;
 
     const ctx = bgCanvas.getContext('2d');
     let particles = [];
-    const numParticles = 75;
+    const numParticles = 80;
     const maxDistance = 160;
 
-    const resizeBg = () => {
-        bgCanvas.width = window.innerWidth;
-        bgCanvas.height = window.innerHeight;
-    };
+    function resizeBg() {
+        bgCanvas.width = window.innerWidth || document.documentElement.clientWidth;
+        bgCanvas.height = window.innerHeight || document.documentElement.clientHeight;
+    }
 
-    window.addEventListener('resize', resizeBg);
     resizeBg();
+    window.addEventListener('resize', resizeBg);
 
+    // Crear partículas
     for (let i = 0; i < numParticles; i++) {
         particles.push({
             x: Math.random() * bgCanvas.width,
             y: Math.random() * bgCanvas.height,
-            vx: (Math.random() - 0.5) * 0.7,
-            vy: (Math.random() - 0.5) * 0.7,
-            size: Math.random() * 2.5 + 1.5,
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: (Math.random() - 0.5) * 0.8,
+            size: Math.random() * 3 + 1.5,
             color: 'rgb(59, 130, 246)'
         });
     }
 
-    const animateBg = () => {
+    function animateBg() {
         ctx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
 
         for (let i = 0; i < particles.length; i++) {
@@ -234,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (p.y < 0 || p.y > bgCanvas.height) p.vy *= -1;
 
             ctx.fillStyle = p.color;
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = 'rgba(59, 130, 246, 0.8)';
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = 'rgba(59, 130, 246, 1)';
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
@@ -247,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < maxDistance) {
-                    let alpha = (1 - dist / maxDistance) * 0.35;
+                    let alpha = (1 - dist / maxDistance) * 0.45;
                     ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
-                    ctx.lineWidth = 0.9;
+                    ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(p.x, p.y);
                     ctx.lineTo(p2.x, p2.y);
@@ -259,7 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         requestAnimationFrame(animateBg);
-    };
+    }
 
     animateBg();
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBgCanvas);
+} else {
+    initBgCanvas();
+}

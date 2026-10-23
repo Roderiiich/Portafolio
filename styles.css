@@ -2,18 +2,18 @@
    VARIABLES Y PALETA DE COLOR
    ========================================================================== */
 :root {
-    --bg-dark: #0a0e17;            /* Fondo principal (negro azulado) */
-    --bg-surface: #111827;         /* Fondo de tarjetas y secciones */
-    --bg-footer: #030712;          /* Fondo del footer */
+    --bg-dark: #0a0e17;            /* Fondo principal */
+    --bg-surface: rgba(17, 24, 39, 0.60); /* Cristal translúcido de tarjetas */
+    --bg-footer: rgba(3, 7, 18, 0.70);
     --primary-blue: #2563eb;       /* Azul primario */
-    --accent-blue: #3b82f6;        /* Azul brillante (textos destacados y hovers) */
+    --accent-blue: #3b82f6;        /* Azul brillante */
     --text-primary: #f8fafc;       /* Texto blanco */
     --text-muted: #94a3b8;         /* Texto secundario gris claro */
-    --border-color: rgba(255, 255, 255, 0.1);
+    --border-color: rgba(255, 255, 255, 0.12);
 }
 
 /* ==========================================================================
-   RESETS Y SCROLL SNAP
+   RESETS Y CAPAS BASE (SIN BLOQUEO DE CAPAS)
    ========================================================================== */
 
 * {
@@ -22,18 +22,13 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    background-color: var(--bg-dark) !important;
-}
-
-body {
+html, body {
     background-color: var(--bg-dark) !important;
     color: var(--text-primary) !important;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6, p, span, a, label {
@@ -41,8 +36,38 @@ h1, h2, h3, h4, h5, h6, p, span, a, label {
 }
 
 /* ==========================================================================
-   ESTRUCTURA DE SECCIONES (TRANSPARENTES PARA DEJAR VER EL FONDO)
+   CANVAS DE FONDO Y ESTELA DE CURSOR
    ========================================================================== */
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0; /* Capa 0 visible */
+    display: block;
+}
+
+#trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999; /* Por encima de todo para la estela */
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE CONTENIDO (SOBRE EL CANVAS)
+   ========================================================================== */
+
+header, main, footer, .btn-whatsapp {
+    position: relative;
+    z-index: 2; /* Siempre sobre el canvas de fondo */
+}
 
 section {
     min-height: 100vh;
@@ -52,33 +77,36 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
-    background: transparent !important; /* Total transparencia para el canvas */
+    padding-top: 90px;
+    background: transparent !important;
     position: relative;
     box-sizing: border-box;
 }
 
 /* ==========================================================================
-   NAVBAR
+   NAVBAR (FIXED ARRIBA)
    ========================================================================== */
 
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
 }
 
 #barra {
-    background: var(--bg-dark) !important; 
-    padding: 15px 40px;
+    background: rgba(10, 14, 23, 0.85) !important; 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 40px;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .marca {
     font-family: 'Fira Code', 'Courier New', Consolas, monospace !important;
-    font-size: 3.4rem !important;
+    font-size: 3rem !important;
     font-weight: 800;
     color: var(--text-primary) !important;
     text-decoration: none;
@@ -101,15 +129,15 @@ header {
 .tag-code {
     color: var(--accent-blue) !important;
     font-weight: 800;
-    font-size: 3.6rem !important;
+    font-size: 3.2rem !important;
     text-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
 }
 
 .nav-link {
     color: var(--text-primary) !important;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 15px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -145,7 +173,7 @@ header {
 }
 
 .titulo-principal {
-    font-size: 75px;
+    font-size: 70px;
     font-weight: bold;
     margin-bottom: 15px;
     line-height: 1.1;
@@ -169,8 +197,8 @@ header {
 }
 
 .contenedor-principal img {
-    width: 480px;
-    height: 580px;
+    width: 450px;
+    height: 550px;
     object-fit: cover;
     box-shadow: 0 0 35px rgba(59, 130, 246, 0.2);
 }
@@ -223,7 +251,7 @@ header {
 }
 
 /* ==========================================================================
-   SOBRE MI
+   SOBRE MI, STACK Y PROYECTOS (ESTILO CRISTAL)
    ========================================================================== */
 
 .contenedor-secundario-sobremi {
@@ -248,20 +276,28 @@ header {
     color: var(--text-muted);
 }
 
-.tarjeta-sobremi {
-    background: rgba(17, 24, 39, 0.85) !important;
-    padding: 30px 20px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
+.tarjeta-sobremi,
+.stack-item,
+#carruselProyectos .card,
+.formulario {
+    background: var(--bg-surface) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 20px !important;
+    border: 1px solid var(--border-color) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     transition: 0.3s ease;
-    height: 100%; 
+}
+
+.tarjeta-sobremi {
+    padding: 30px 20px;
+    height: 100%;
     text-align: center;
 }
 
 .tarjeta-sobremi:hover {
     transform: translateY(-8px);
-    border-color: var(--accent-blue);
+    border-color: var(--accent-blue) !important;
     box-shadow: 0 12px 30px rgba(59, 130, 246, 0.25);
 }
 
@@ -286,9 +322,7 @@ header {
     margin-bottom: 0;
 }
 
-/* ==========================================================================
-   STACK (TECNOLOGÍAS)
-   ========================================================================== */
+/* STACK */
 
 .stack-grid {
     max-width: 1200px;
@@ -299,12 +333,8 @@ header {
 }
 
 .stack-item {
-    background: rgba(17, 24, 39, 0.85) !important;
     padding: 25px 20px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .stack-item h3 {
@@ -335,9 +365,7 @@ header {
     filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.5)); 
 }
 
-/* ==========================================================================
-   CARRUSEL DE PROYECTOS
-   ========================================================================== */
+/* CARRUSEL */
 
 #carruselProyectos {
     padding-bottom: 50px;
@@ -354,15 +382,10 @@ header {
     width: 100% !important;
     height: 100% !important;
     min-height: 440px;
-    background: rgba(17, 24, 39, 0.85) !important; 
-    border: 1px solid var(--border-color) !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    border-radius: 20px !important;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 #carruselProyectos .card:hover {
@@ -460,26 +483,13 @@ header {
     right: -25px !important;
 }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: var(--accent-blue) !important;
-    opacity: 1;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 20px !important;
-    height: 20px !important;
-}
-
 .carousel-indicators {
     bottom: -15px;
 }
 
 .carousel-indicators [data-bs-target] {
     background-color: var(--accent-blue);
-    width: 100px;
+    width: 10px;
     height: 10px;
     border-radius: 50%;
     margin: 0 5px;
@@ -504,11 +514,7 @@ header {
 }
 
 .formulario {
-    background: rgba(17, 24, 39, 0.85) !important;
     padding: 25px 30px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .form-group {
@@ -525,7 +531,7 @@ header {
 .form-control {
     border: 1px solid var(--border-color) !important;
     padding: 10px;
-    background-color: #0b1120 !important;
+    background-color: rgba(11, 17, 32, 0.8) !important;
     color: var(--text-primary) !important;
     border-radius: 8px;
 }
@@ -545,6 +551,8 @@ header {
 footer {
     scroll-snap-align: end;
     background: var(--bg-footer) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     border-top: 1px solid var(--border-color);
     text-align: center;
     padding: 30px 20px;
@@ -580,38 +588,7 @@ footer {
 }
 
 /* ==========================================================================
-   MODAL PERSONALIZADO CON BLUR
-   ========================================================================== */
-
-.modal-blur {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background-color: rgba(10, 14, 23, 0.6);
-}
-
-.tarjeta-modal {
-    background: var(--bg-surface) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 20px !important;
-    color: var(--text-primary) !important;
-}
-
-.icono-exito i {
-    font-size: 3rem;
-    color: var(--accent-blue);
-}
-
-.btn-modal {
-    background: var(--primary-blue) !important;
-    color: var(--text-primary) !important;
-    border: 1px solid var(--accent-blue);
-    border-radius: 50px;
-    padding: 8px 30px;
-    font-weight: 600;
-}
-
-/* ==========================================================================
-   BOTÓN FLOTANTE WHATSAPP (ESTILO NEÓN)
+   BOTÓN FLOTANTE WHATSAPP Y SWITCH DE IDIOMA
    ========================================================================== */
 
 .btn-whatsapp {
@@ -640,10 +617,6 @@ footer {
     transform: scale(1.12) translateY(-3px);
     box-shadow: 0 0 25px rgba(59, 130, 246, 0.8);
 }
-
-/* ==========================================================================
-   INTERRUPTOR DESLIZABLE DE IDIOMA (SWITCH)
-   ========================================================================== */
 
 .lang-switch-container {
     display: inline-flex;
@@ -724,31 +697,6 @@ input:checked + .slider:before {
 }
 
 /* ==========================================================================
-   CANVAS DE ESTELA DE CURSOR Y FONDO ANIMADO
-   ========================================================================== */
-
-#trail-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-#bg-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: -1;
-    display: block;
-}
-
-/* ==========================================================================
    RESPONSIVE (MÓVILES Y TABLETS)
    ========================================================================== */
 
@@ -777,14 +725,6 @@ input:checked + .slider:before {
     .titulo-principal {
         font-size: 2.2rem;
     }
-
-    .carousel-control-prev {
-        left: 0px !important;
-    }
-
-    .carousel-control-next {
-        right: 0px !important;
-    }
 }
 
 @media (max-width: 768px) {
@@ -798,13 +738,5 @@ input:checked + .slider:before {
 
     #carruselProyectos .carousel-inner {
         padding: 10px 15px;
-    }
-
-    .carousel-control-prev {
-        left: -10px !important;
-    }
-
-    .carousel-control-next {
-        right: -10px !important;
     }
 }
