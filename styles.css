@@ -3,8 +3,8 @@
    ========================================================================== */
 :root {
     --bg-dark: #0a0e17;            /* Fondo principal */
-    --bg-surface: rgba(17, 24, 39, 0.60); /* Cristal translúcido de tarjetas */
-    --bg-footer: rgba(3, 7, 18, 0.70);
+    --bg-surface: rgba(17, 24, 39, 0.65); /* Cristal translúcido de tarjetas */
+    --bg-footer: rgba(3, 7, 18, 0.75);
     --primary-blue: #2563eb;       /* Azul primario */
     --accent-blue: #3b82f6;        /* Azul brillante */
     --text-primary: #f8fafc;       /* Texto blanco */
@@ -13,7 +13,7 @@
 }
 
 /* ==========================================================================
-   RESETS Y CAPAS BASE (SIN BLOQUEO DE CAPAS)
+   RESETS Y CAPAS BASE
    ========================================================================== */
 
 * {
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, label {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 0; /* Capa 0 visible */
+    z-index: 0;
     display: block;
 }
 
@@ -57,16 +57,16 @@ h1, h2, h3, h4, h5, h6, p, span, a, label {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-    z-index: 9999; /* Por encima de todo para la estela */
+    z-index: 9999;
 }
 
 /* ==========================================================================
-   ESTRUCTURA DE CONTENIDO (SOBRE EL CANVAS)
+   ESTRUCTURA DE CONTENIDO
    ========================================================================== */
 
 header, main, footer, .btn-whatsapp {
     position: relative;
-    z-index: 2; /* Siempre sobre el canvas de fondo */
+    z-index: 2;
 }
 
 section {
@@ -84,7 +84,7 @@ section {
 }
 
 /* ==========================================================================
-   NAVBAR (FIXED ARRIBA)
+   NAVBAR
    ========================================================================== */
 
 header {
@@ -147,7 +147,7 @@ header {
 }
 
 /* ==========================================================================
-   HOME (INICIO)
+   HOME (INICIO) CON TARJETA DE CRISTAL
    ========================================================================== */
 
 .contenedor-principal {
@@ -163,6 +163,13 @@ header {
 
 .contenido-principal {
     flex: 1;
+    background: var(--bg-surface) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    padding: 35px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .holasoy {
@@ -173,7 +180,7 @@ header {
 }
 
 .titulo-principal {
-    font-size: 70px;
+    font-size: 65px;
     font-weight: bold;
     margin-bottom: 15px;
     line-height: 1.1;
@@ -184,13 +191,13 @@ header {
 }
 
 .contenido-principal h3 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 20px;
     color: var(--text-primary);
 }
 
 .contenido-principal p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 25px;
     color: var(--text-muted);
@@ -281,8 +288,8 @@ header {
 #carruselProyectos .card,
 .formulario {
     background: var(--bg-surface) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
     border-radius: 20px !important;
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -708,13 +715,24 @@ input:checked + .slider:before {
     section {
         height: auto;
         min-height: 100vh;
-        padding: 100px 20px 60px 20px;
+        padding: 100px 18px 60px 18px;
     }
 
     .contenedor-principal {
         flex-direction: column-reverse; 
         text-align: center;
         gap: 30px; 
+        padding: 0;
+    }
+
+    .contenido-principal {
+        padding: 25px 20px;
+    }
+
+    .contenido-principal p {
+        font-size: 0.98rem;
+        line-height: 1.5;
+        color: #cbd5e1 !important;
     }
 
     .contenedor-principal img {

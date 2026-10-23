@@ -103,10 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
 // ==========================================================================
-// FONDO ANIMADO DE NODOS NEÓN (EJECUCIÓN DIRECTA)
+// FONDO ANIMADO DE NODOS NEÓN (RESPONSIVE ADAPTATIVO)
 // ==========================================================================
 
 function initBgCanvas() {
@@ -115,8 +113,11 @@ function initBgCanvas() {
 
     const ctx = bgCanvas.getContext('2d');
     let particles = [];
-    const numParticles = 80;
-    const maxDistance = 160;
+    
+    // Adaptar densidad según el tamaño de pantalla
+    const isMobile = (window.innerWidth || document.documentElement.clientWidth) <= 768;
+    const numParticles = isMobile ? 35 : 80;
+    const maxDistance = isMobile ? 110 : 160;
 
     function resizeBg() {
         bgCanvas.width = window.innerWidth || document.documentElement.clientWidth;
@@ -133,7 +134,7 @@ function initBgCanvas() {
             y: Math.random() * bgCanvas.height,
             vx: (Math.random() - 0.5) * 0.8,
             vy: (Math.random() - 0.5) * 0.8,
-            size: Math.random() * 3 + 1.5,
+            size: Math.random() * 2.5 + 1.2,
             color: 'rgb(59, 130, 246)'
         });
     }
@@ -151,8 +152,8 @@ function initBgCanvas() {
             if (p.y < 0 || p.y > bgCanvas.height) p.vy *= -1;
 
             ctx.fillStyle = p.color;
-            ctx.shadowBlur = 12;
-            ctx.shadowColor = 'rgba(59, 130, 246, 1)';
+            ctx.shadowBlur = 10;
+            ctx.shadowColor = 'rgba(59, 130, 246, 0.9)';
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
             ctx.fill();
@@ -164,7 +165,7 @@ function initBgCanvas() {
                 let dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < maxDistance) {
-                    let alpha = (1 - dist / maxDistance) * 0.45;
+                    let alpha = (1 - dist / maxDistance) * (isMobile ? 0.3 : 0.45);
                     ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
                     ctx.lineWidth = 1;
                     ctx.beginPath();
