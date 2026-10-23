@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:title"
+      content="Rodrigo Cortés | Portafolio de Software"
+    />
+    <meta
+      property="og:description"
+      content="Ingeniero Informático en Formación especializado en desarrollo Web, Móvil y Backend."
+    />
+    <meta
+      property="og:image"
+      content="https://roderich.netlify.app/img/logo2.png"
+    />
     <title>Roderich | Portafolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="img/roderich-logo.png" />
+    <link rel="icon" href="img/logo2.png" />
 
     <link
       rel="stylesheet"
@@ -49,10 +61,14 @@
 
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark" id="barra">
-        <div class="container-fluid d-flex align-items-center justify-content-between position-relative">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-between position-relative"
+        >
           <!-- Marca Roderich -->
           <a class="marca" href="index.html">
-            <span class="tag-code">&lt;</span>Rode<span class="marca-accent">rich</span><span class="tag-code">/&gt;</span>
+            <span class="tag-code">&lt;</span>Rode<span class="marca-accent"
+              >rich</span
+            ><span class="tag-code">/&gt;</span>
           </a>
 
           <!-- Botón Hamburguesa -->
@@ -69,7 +85,10 @@
           </button>
 
           <!-- Menú desplegable -->
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
             <ul class="navbar-nav text-center align-items-center pt-3 pt-lg-0">
               <li class="nav-item mb-2 mb-lg-0">
                 <a
@@ -125,13 +144,33 @@
               <li
                 class="nav-item mb-2 mb-lg-0 d-flex align-items-center justify-content-center ms-lg-3 my-2 my-lg-0"
               >
-                <div class="lang-switch-container">
-                  <span class="lang-label lang-es active">ES</span>
-                  <label class="switch">
+                <div
+                  class="lang-switch-container d-flex align-items-center gap-2"
+                >
+                  <span
+                    class="lang-label lang-es active d-flex align-items-center gap-1"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/es.png"
+                      alt="ES"
+                      style="width: 18px; height: auto; border-radius: 2px"
+                    />
+                    ES
+                  </span>
+                  <label class="switch mb-0">
                     <input type="checkbox" id="lang-toggle" />
                     <span class="slider round"></span>
                   </label>
-                  <span class="lang-label lang-en">EN</span>
+                  <span
+                    class="lang-label lang-en d-flex align-items-center gap-1"
+                  >
+                    <img
+                      src="https://flagcdn.com/w20/us.png"
+                      alt="EN"
+                      style="width: 18px; height: auto; border-radius: 2px"
+                    />
+                    EN
+                  </span>
                 </div>
               </li>
             </ul>
@@ -211,6 +250,7 @@
               con interfaces de usuario limpias, responsivas y atractivas.
             </p>
 
+            <!-- Tarjetas Principales de Valores -->
             <div class="row g-4 mt-2 justify-content-center">
               <div class="col-md-4">
                 <div class="tarjeta-sobremi">
@@ -259,6 +299,49 @@
                 </div>
               </div>
             </div>
+
+            <!-- BLOQUE DE MÉTRICAS / LOGROS INTEGRADO -->
+            <div class="row g-3 justify-content-center text-center mt-4">
+              <div class="col-6 col-md-3">
+                <div class="tarjeta-metrica">
+                  <i class="bi bi-folder-check"></i>
+                  <h3 class="contador">12+</h3>
+                  <p
+                    data-es="Proyectos Realizados"
+                    data-en="Completed Projects"
+                  >
+                    Proyectos Realizados
+                  </p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="tarjeta-metrica">
+                  <i class="bi bi-code-slash"></i>
+                  <h3 class="contador">5+</h3>
+                  <p data-es="Lenguajes Dominados" data-en="Mastered Languages">
+                    Lenguajes Dominados
+                  </p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="tarjeta-metrica">
+                  <i class="bi bi-layers"></i>
+                  <h3 class="contador">4+</h3>
+                  <p data-es="Frameworks Utilizados" data-en="Frameworks Used">
+                    Frameworks Utilizados
+                  </p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="tarjeta-metrica">
+                  <i class="bi bi-cloud-check"></i>
+                  <h3 class="contador">AWS</h3>
+                  <p data-es="Despliegue Cloud" data-en="Cloud Deployment">
+                    Despliegue Cloud
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -279,18 +362,33 @@
               <div class="contenedor-iconos">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Java"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="JavaScript"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="C#"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Python"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="PHP"
                 />
               </div>
             </div>
@@ -300,15 +398,27 @@
               <div class="contenedor-iconos">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Spring Boot"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Django"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-plain.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title=".NET Core"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Laravel"
                 />
               </div>
             </div>
@@ -318,15 +428,27 @@
               <div class="contenedor-iconos">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="HTML5"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Tailwind CSS"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="CSS3"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Bootstrap 5"
                 />
               </div>
             </div>
@@ -336,18 +458,33 @@
               <div class="contenedor-iconos">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Oracle DB"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="MySQL"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Android Studio"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original-wordmark.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="MariaDB"
                 />
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="AWS"
                 />
               </div>
             </div>
@@ -365,6 +502,42 @@
             Mis <span>Proyectos</span>
           </h1>
 
+          <!-- BOTONES DE FILTRADO -->
+          <div class="filtros-proyectos text-center mb-4">
+            <button
+              class="btn-filtro active"
+              data-filter="all"
+              data-es="Todos"
+              data-en="All"
+            >
+              Todos
+            </button>
+            <button
+              class="btn-filtro"
+              data-filter="web"
+              data-es="Web"
+              data-en="Web"
+            >
+              Web
+            </button>
+            <button
+              class="btn-filtro"
+              data-filter="mobile"
+              data-es="Móvil"
+              data-en="Mobile"
+            >
+              Móvil
+            </button>
+            <button
+              class="btn-filtro"
+              data-filter="backend"
+              data-es="Backend / Systems"
+              data-en="Backend / Systems"
+            >
+              Backend / Sistemas
+            </button>
+          </div>
+
           <!-- 1. VISTA COMPUTADOR / PC (AGRUPADOS DE A 3) -->
           <div
             id="carruselPC"
@@ -376,7 +549,7 @@
               <div class="carousel-item active">
                 <div class="row g-4 justify-content-center">
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="web">
                       <img src="img/logonutrilife.png" alt="NutriLife" />
                       <div class="card-body">
                         <h2>NutriLife</h2>
@@ -384,37 +557,64 @@
                           data-es="NutriLife es una innovadora herramienta que facilita a los nutricionistas el seguimiento de la salud de sus pacientes. Permite calcular el IMC, registrar información vital y ofrece visualizaciones claras."
                           data-en="NutriLife is an innovative tool that helps nutritionists track patient health. It allows calculating BMI, recording vital data, and providing clear visual insights."
                         >
-                          NutriLife es una innovadora herramienta que facilita a los nutricionistas el seguimiento de la salud de sus pacientes. Permite calcular el IMC, registrar información vital y ofrece visualizaciones claras.
+                          NutriLife es una innovadora herramienta que facilita a
+                          los nutricionistas el seguimiento de la salud de sus
+                          pacientes. Permite calcular el IMC, registrar
+                          información vital y ofrece visualizaciones claras.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Nutrilife-Web" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Nutrilife-Web"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="web">
                       <img src="img/molaris.png" alt="Proyecto Molaris" />
                       <div class="card-body">
-                        <h2 data-es="Proyecto Molaris" data-en="Molaris Project">Proyecto Molaris</h2>
+                        <h2
+                          data-es="Proyecto Molaris"
+                          data-en="Molaris Project"
+                        >
+                          Proyecto Molaris
+                        </h2>
                         <p
                           data-es="Plataforma web desarrollada en Laravel y Tailwind CSS para la gestión integral de clínicas dentales. Permite la administración de pacientes, agendamiento de citas con control de colisiones y avisos."
                           data-en="Web platform developed with Laravel and Tailwind CSS for dental clinic management. Enables patient administration, appointment scheduling with collision control, and notifications."
                         >
-                          Plataforma web desarrollada en Laravel y Tailwind CSS para la gestión integral de clínicas dentales. Permite la administración de pacientes, agendamiento de citas con control de colisiones y avisos.
+                          Plataforma web desarrollada en Laravel y Tailwind CSS
+                          para la gestión integral de clínicas dentales. Permite
+                          la administración de pacientes, agendamiento de citas
+                          con control de colisiones y avisos.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Proyecto-Molaris" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Proyecto-Molaris"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="web">
                       <img src="img/negrojose.jpeg" alt="Café Negro José" />
                       <div class="card-body">
                         <h2>El Café del Negro José</h2>
@@ -422,12 +622,23 @@
                           data-es="El Café del Negro José es un sitio web dedicado a brindar una experiencia única y acogedora para los amantes del café. Diseñada exclusivamente utilizando tecnologías de frontend."
                           data-en="El Café del Negro José is a website providing a unique and cozy experience for coffee lovers. Designed exclusively using frontend technologies."
                         >
-                          El Café del Negro José es un sitio web dedicado a brindar una experiencia única y acogedora para los amantes del café. Diseñada exclusivamente utilizando tecnologías de frontend.
+                          El Café del Negro José es un sitio web dedicado a
+                          brindar una experiencia única y acogedora para los
+                          amantes del café. Diseñada exclusivamente utilizando
+                          tecnologías de frontend.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Cafe-Negro-Jose-Web" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Cafe-Negro-Jose-Web"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
@@ -439,57 +650,97 @@
               <div class="carousel-item">
                 <div class="row g-4 justify-content-center">
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
-                      <img src="img/fragaria-perfumes.png" alt="Fragaria Perfumes" />
+                    <div class="card w-100" data-category="web">
+                      <img
+                        src="img/fragaria-perfumes.png"
+                        alt="Fragaria Perfumes"
+                      />
                       <div class="card-body">
                         <h2>Fragaria Perfumes</h2>
                         <p
                           data-es="Fragaria Perfumes es una aplicación web full-stack desarrollada para la gestión y visualización de un catálogo exclusivo de perfumería prémium con arquitectura MVC."
                           data-en="Fragaria Perfumes is a full-stack web application developed for managing and displaying an exclusive premium perfume catalog built with MVC architecture."
                         >
-                          Fragaria Perfumes es una aplicación web full-stack desarrollada para la gestión y visualización de un catálogo exclusivo de perfumería prémium con arquitectura MVC.
+                          Fragaria Perfumes es una aplicación web full-stack
+                          desarrollada para la gestión y visualización de un
+                          catálogo exclusivo de perfumería prémium con
+                          arquitectura MVC.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Fragaria-Perfumes" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Fragaria-Perfumes"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
-                      <img src="img/patitasfelices.png" alt="Patitas y Huellas" />
+                    <div class="card w-100" data-category="backend">
+                      <img
+                        src="img/patitasfelices.png"
+                        alt="Patitas y Huellas"
+                      />
                       <div class="card-body">
                         <h2>Patitas y Huellas</h2>
                         <p
                           data-es="Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros."
                           data-en="This project is a Django-based web application to manage pet and owner information. It includes features for creating, editing, and deleting records."
                         >
-                          Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros.
+                          Este proyecto es una aplicación web desarrollada con
+                          Django que permite gestionar información sobre
+                          mascotas y sus dueños. Incluye funciones para
+                          registrar, editar y eliminar registros.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/CRUD-Veterinaria-Django" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/CRUD-Veterinaria-Django"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="backend">
                       <img src="img/nube.png" alt="Nube IPVG" />
                       <div class="card-body">
-                        <h2 data-es="Nube IPVG" data-en="IPVG Cloud">Nube IPVG</h2>
+                        <h2 data-es="Nube IPVG" data-en="IPVG Cloud">
+                          Nube IPVG
+                        </h2>
                         <p
                           data-es="Lideré el diseño técnico de una infraestructura elástica en AWS para erradicar los colapsos de la intranet institucional. Coordiné la puesta a punto de un clúster de bases de datos de 3 nodos."
                           data-en="Led the technical design of an elastic AWS infrastructure to eliminate intranet downtime. Coordinated the setup of a 3-node database cluster."
                         >
-                          Lideré el diseño técnico de una infraestructura elástica en AWS para erradicar los colapsos de la intranet institucional. Coordiné la puesta a punto de un clúster de bases de datos de 3 nodos.
+                          Lideré el diseño técnico de una infraestructura
+                          elástica en AWS para erradicar los colapsos de la
+                          intranet institucional. Coordiné la puesta a punto de
+                          un clúster de bases de datos de 3 nodos.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="#"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a>
+                        <a href="#"
+                          ><button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button></a
+                        >
                       </div>
                     </div>
                   </div>
@@ -500,7 +751,7 @@
               <div class="carousel-item">
                 <div class="row g-4 justify-content-center">
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="mobile">
                       <img src="img/parkr.jpg" alt="Parkr App" />
                       <div class="card-body">
                         <h2>Parkr App</h2>
@@ -508,18 +759,29 @@
                           data-es="Parkr es una aplicación de parquímetros desarrollada en Android, diseñada para facilitar el proceso de pago y gestión del estacionamiento de forma transparente y fluida."
                           data-en="Parkr is an Android parking application designed to streamline parking management and payment in a transparent, smooth manner."
                         >
-                          Parkr es una aplicación de parquímetros desarrollada en Android, diseñada para facilitar el proceso de pago y gestión del estacionamiento de forma transparente y fluida.
+                          Parkr es una aplicación de parquímetros desarrollada
+                          en Android, diseñada para facilitar el proceso de pago
+                          y gestión del estacionamiento de forma transparente y
+                          fluida.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Parkr-App-Parquimetro-Android" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Parkr-App-Parquimetro-Android"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="web">
                       <img src="img/wilsonxd.png" alt="Wilson XD" />
                       <div class="card-body">
                         <h2>Wilson XD</h2>
@@ -527,18 +789,29 @@
                           data-es="Wilson XD es un sistema operativo web interactivo. Simula una experiencia de escritorio retro donde cada usuario cuenta con un entorno aislado y persistente con descargas y simulación BSOD."
                           data-en="Wilson XD is an interactive web operating system simulating a retro desktop environment where users have isolated persistent storage and BSOD effects."
                         >
-                          Wilson XD es un sistema operativo web interactivo. Simula una experiencia de escritorio retro donde cada usuario cuenta con un entorno aislado y persistente con descargas y simulación BSOD.
+                          Wilson XD es un sistema operativo web interactivo.
+                          Simula una experiencia de escritorio retro donde cada
+                          usuario cuenta con un entorno aislado y persistente
+                          con descargas y simulación BSOD.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/wilsonxd" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/wilsonxd"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="backend">
                       <img src="img/motorget.png" alt="MotorGet" />
                       <div class="card-body">
                         <h2>MotorGet</h2>
@@ -546,12 +819,23 @@
                           data-es="Aplicación web desarrollada con Python y Django que permite gestionar automóviles de manera eficiente. Funcionalidades para agregar, editar, eliminar y visualizar vehículos."
                           data-en="Web application developed with Python and Django for efficient vehicle management. Features include adding, editing, deleting, and viewing cars."
                         >
-                          Aplicación web desarrollada con Python y Django que permite gestionar automóviles de manera eficiente. Funcionalidades para agregar, editar, eliminar y visualizar vehículos.
+                          Aplicación web desarrollada con Python y Django que
+                          permite gestionar automóviles de manera eficiente.
+                          Funcionalidades para agregar, editar, eliminar y
+                          visualizar vehículos.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/gestor-automoviles-proyect" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/gestor-automoviles-proyect"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
@@ -563,7 +847,7 @@
               <div class="carousel-item">
                 <div class="row g-4 justify-content-center">
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="backend">
                       <img src="img/edufacil.png" alt="EduFácil" />
                       <div class="card-body">
                         <h2>EduFácil</h2>
@@ -571,18 +855,29 @@
                           data-es="Aplicación web diseñada para simplificar la administración de datos escolares. Resuelve la complejidad académica controlando el ciclo completo de registros de alumnos."
                           data-en="Web application designed to simplify school data management, handling student lifecycle and subject records."
                         >
-                          Aplicación web diseñada para simplificar la administración de datos escolares. Resuelve la complejidad académica controlando el ciclo completo de registros de alumnos.
+                          Aplicación web diseñada para simplificar la
+                          administración de datos escolares. Resuelve la
+                          complejidad académica controlando el ciclo completo de
+                          registros de alumnos.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/CRUD-Asignaturas-Alumnos" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/CRUD-Asignaturas-Alumnos"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="mobile">
                       <img src="img/nutrilife-ia.png" alt="Nutrilife IA" />
                       <div class="card-body">
                         <h2>Nutrilife IA Android</h2>
@@ -590,31 +885,55 @@
                           data-es="El objetivo de NutriLife IA es ayudar a los usuarios a mejorar su salud mediante una herramienta gratuita y accesible, promoviendo hábitos saludables con Inteligencia Artificial."
                           data-en="NutriLife AI aims to help users improve health with an accessible AI-powered tool promoting healthy daily habits."
                         >
-                          El objetivo de NutriLife IA es ayudar a los usuarios a mejorar su salud mediante una herramienta gratuita y accesible, promoviendo hábitos saludables con Inteligencia Artificial.
+                          El objetivo de NutriLife IA es ayudar a los usuarios a
+                          mejorar su salud mediante una herramienta gratuita y
+                          accesible, promoviendo hábitos saludables con
+                          Inteligencia Artificial.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/NutriLife-IA-Android" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/NutriLife-IA-Android"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 d-flex">
-                    <div class="card w-100">
+                    <div class="card w-100" data-category="web">
                       <img src="img/logo-portafolio.jpg" alt="Portafolio Web" />
                       <div class="card-body">
-                        <h2 data-es="Portafolio Web" data-en="Web Portfolio">Portafolio Web</h2>
+                        <h2 data-es="Portafolio Web" data-en="Web Portfolio">
+                          Portafolio Web
+                        </h2>
                         <p
                           data-es="Portafolio profesional concebido para exhibir mi trayectoria. Desarrollado combinando Bootstrap 5 con un diseño de UI personalizado en CSS3 y lógica de control en JavaScript."
                           data-en="Professional portfolio designed to highlight my journey. Built using Bootstrap 5, custom CSS3 UI, and interactive JavaScript."
                         >
-                          Portafolio profesional concebido para exhibir mi trayectoria. Desarrollado combinando Bootstrap 5 con un diseño de UI personalizado en CSS3 y lógica de control en JavaScript.
+                          Portafolio profesional concebido para exhibir mi
+                          trayectoria. Desarrollado combinando Bootstrap 5 con
+                          un diseño de UI personalizado en CSS3 y lógica de
+                          control en JavaScript.
                         </p>
                       </div>
                       <div class="btn-visitar">
-                        <a href="https://github.com/Roderiiich/Portafolio" target="_blank">
-                          <button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button>
+                        <a
+                          href="https://github.com/Roderiiich/Portafolio"
+                          target="_blank"
+                        >
+                          <button
+                            data-es="Ver Repositorio"
+                            data-en="View Repository"
+                          >
+                            Ver Repositorio
+                          </button>
                         </a>
                       </div>
                     </div>
@@ -623,10 +942,20 @@
               </div>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carruselPC" data-bs-slide="prev">
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carruselPC"
+              data-bs-slide="prev"
+            >
               <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carruselPC" data-bs-slide="next">
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carruselPC"
+              data-bs-slide="next"
+            >
               <span class="carousel-control-next-icon"></span>
             </button>
           </div>
@@ -639,7 +968,7 @@
           >
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="card w-100">
+                <div class="card w-100" data-category="web">
                   <img src="img/logonutrilife.png" alt="NutriLife" />
                   <div class="card-body">
                     <h2>NutriLife</h2>
@@ -647,31 +976,61 @@
                       data-es="NutriLife es una innovadora herramienta que facilita a los nutricionistas el seguimiento de la salud de sus pacientes. Permite calcular el IMC, registrar información vital y ofrece visualizaciones claras."
                       data-en="NutriLife is an innovative tool that helps nutritionists track patient health. It allows calculating BMI, recording vital data, and providing clear visual insights."
                     >
-                      NutriLife es una innovadora herramienta que facilita a los nutricionistas el seguimiento de la salud de sus pacientes. Permite calcular el IMC, registrar información vital y ofrece visualizaciones claras.
+                      NutriLife es una innovadora herramienta que facilita a los
+                      nutricionistas el seguimiento de la salud de sus
+                      pacientes. Permite calcular el IMC, registrar información
+                      vital y ofrece visualizaciones claras.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Nutrilife-Web" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Nutrilife-Web"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="web">
                   <img src="img/molaris.png" alt="Proyecto Molaris" />
                   <div class="card-body">
-                    <h2 data-es="Proyecto Molaris" data-en="Molaris Project">Proyecto Molaris</h2>
+                    <h2 data-es="Proyecto Molaris" data-en="Molaris Project">
+                      Proyecto Molaris
+                    </h2>
                     <p
                       data-es="Plataforma web desarrollada en Laravel y Tailwind CSS para la gestión integral de clínicas dentales. Permite la administración de pacientes, agendamiento de citas con control de colisiones y avisos."
                       data-en="Web platform developed with Laravel and Tailwind CSS for dental clinic management. Enables patient administration, appointment scheduling with collision control, and notifications."
                     >
-                      Plataforma web desarrollada en Laravel y Tailwind CSS para la gestión integral de clínicas dentales. Permite la administración de pacientes, agendamiento de citas con control de colisiones y avisos.
+                      Plataforma web desarrollada en Laravel y Tailwind CSS para
+                      la gestión integral de clínicas dentales. Permite la
+                      administración de pacientes, agendamiento de citas con
+                      control de colisiones y avisos.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Proyecto-Molaris" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Proyecto-Molaris"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="web">
                   <img src="img/negrojose.jpeg" alt="El Café del Negro José" />
                   <div class="card-body">
                     <h2>El Café del Negro José</h2>
@@ -679,31 +1038,62 @@
                       data-es="El Café del Negro José es un sitio web dedicado a brindar una experiencia única y acogedora para los amantes del café. Diseñada exclusivamente utilizando tecnologías de frontend."
                       data-en="El Café del Negro José is a website providing a unique and cozy experience for coffee lovers. Designed exclusively using frontend technologies."
                     >
-                      El Café del Negro José es un sitio web dedicado a brindar una experiencia única y acogedora para los amantes del café. Diseñada exclusivamente utilizando tecnologías de frontend.
+                      El Café del Negro José es un sitio web dedicado a brindar
+                      una experiencia única y acogedora para los amantes del
+                      café. Diseñada exclusivamente utilizando tecnologías de
+                      frontend.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Cafe-Negro-Jose-Web" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Cafe-Negro-Jose-Web"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
-                  <img src="img/fragaria-perfumes.png" alt="Fragaria Perfumes" />
+                <div class="card w-100" data-category="web">
+                  <img
+                    src="img/fragaria-perfumes.png"
+                    alt="Fragaria Perfumes"
+                  />
                   <div class="card-body">
                     <h2>Fragaria Perfumes</h2>
                     <p
                       data-es="Fragaria Perfumes es una aplicación web full-stack desarrollada para la gestión y visualización de un catálogo exclusivo de perfumería prémium con arquitectura MVC."
                       data-en="Fragaria Perfumes is a full-stack web application developed for managing and displaying an exclusive premium perfume catalog built with MVC architecture."
                     >
-                      Fragaria Perfumes es una aplicación web full-stack desarrollada para la gestión y visualización de un catálogo exclusivo de perfumería prémium con arquitectura MVC.
+                      Fragaria Perfumes es una aplicación web full-stack
+                      desarrollada para la gestión y visualización de un
+                      catálogo exclusivo de perfumería prémium con arquitectura
+                      MVC.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Fragaria-Perfumes" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Fragaria-Perfumes"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="backend">
                   <img src="img/patitasfelices.png" alt="Patitas y Huellas" />
                   <div class="card-body">
                     <h2>Patitas y Huellas</h2>
@@ -711,15 +1101,29 @@
                       data-es="Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros."
                       data-en="This project is a Django-based web application to manage pet and owner information. It includes features for creating, editing, and deleting records."
                     >
-                      Este proyecto es una aplicación web desarrollada con Django que permite gestionar información sobre mascotas y sus dueños. Incluye funciones para registrar, editar y eliminar registros.
+                      Este proyecto es una aplicación web desarrollada con
+                      Django que permite gestionar información sobre mascotas y
+                      sus dueños. Incluye funciones para registrar, editar y
+                      eliminar registros.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/CRUD-Veterinaria-Django" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/CRUD-Veterinaria-Django"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="backend">
                   <img src="img/nube.png" alt="Nube IPVG" />
                   <div class="card-body">
                     <h2 data-es="Nube IPVG" data-en="IPVG Cloud">Nube IPVG</h2>
@@ -727,15 +1131,27 @@
                       data-es="Lideré el diseño técnico de una infraestructura elástica en AWS para erradicar los colapsos de la intranet institucional. Coordiné la puesta a punto de un clúster de bases de datos de 3 nodos."
                       data-en="Led the technical design of an elastic AWS infrastructure to eliminate intranet downtime. Coordinated the setup of a 3-node database cluster."
                     >
-                      Lideré el diseño técnico de una infraestructura elástica en AWS para erradicar los colapsos de la intranet institucional. Coordiné la puesta a punto de un clúster de bases de datos de 3 nodos.
+                      Lideré el diseño técnico de una infraestructura elástica
+                      en AWS para erradicar los colapsos de la intranet
+                      institucional. Coordiné la puesta a punto de un clúster de
+                      bases de datos de 3 nodos.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="#"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a href="#"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="mobile">
                   <img src="img/parkr.jpg" alt="Parkr App" />
                   <div class="card-body">
                     <h2>Parkr App</h2>
@@ -743,15 +1159,29 @@
                       data-es="Parkr es una aplicación de parquímetros desarrollada en Android, diseñada para facilitar el proceso de pago y gestión del estacionamiento de forma transparente y fluida."
                       data-en="Parkr is an Android parking application designed to streamline parking management and payment in a transparent, smooth manner."
                     >
-                      Parkr es una aplicación de parquímetros desarrollada en Android, diseñada para facilitar el proceso de pago y gestión del estacionamiento de forma transparente y fluida.
+                      Parkr es una aplicación de parquímetros desarrollada en
+                      Android, diseñada para facilitar el proceso de pago y
+                      gestión del estacionamiento de forma transparente y
+                      fluida.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Parkr-App-Parquimetro-Android" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Parkr-App-Parquimetro-Android"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="web">
                   <img src="img/wilsonxd.png" alt="Wilson XD" />
                   <div class="card-body">
                     <h2>Wilson XD</h2>
@@ -759,15 +1189,29 @@
                       data-es="Wilson XD es un sistema operativo web interactivo. Simula una experiencia de escritorio retro donde cada usuario cuenta con un entorno aislado y persistente con descargas y simulación BSOD."
                       data-en="Wilson XD is an interactive web operating system simulating a retro desktop environment where users have isolated persistent storage and BSOD effects."
                     >
-                      Wilson XD es un sistema operativo web interactivo. Simula una experiencia de escritorio retro donde cada usuario cuenta con un entorno aislado y persistente con descargas y simulación BSOD.
+                      Wilson XD es un sistema operativo web interactivo. Simula
+                      una experiencia de escritorio retro donde cada usuario
+                      cuenta con un entorno aislado y persistente con descargas
+                      y simulación BSOD.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/wilsonxd" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/wilsonxd"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="backend">
                   <img src="img/motorget.png" alt="MotorGet" />
                   <div class="card-body">
                     <h2>MotorGet</h2>
@@ -775,15 +1219,29 @@
                       data-es="Aplicación web desarrollada con Python y Django que permite gestionar automóviles de manera eficiente. Funcionalidades para agregar, editar, eliminar y visualizar vehículos."
                       data-en="Web application developed with Python and Django for efficient vehicle management. Features include adding, editing, deleting, and viewing cars."
                     >
-                      Aplicación web desarrollada con Python y Django que permite gestionar automóviles de manera eficiente. Funcionalidades para agregar, editar, eliminar y visualizar vehículos.
+                      Aplicación web desarrollada con Python y Django que
+                      permite gestionar automóviles de manera eficiente.
+                      Funcionalidades para agregar, editar, eliminar y
+                      visualizar vehículos.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/gestor-automoviles-proyect" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/gestor-automoviles-proyect"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="backend">
                   <img src="img/edufacil.png" alt="EduFácil" />
                   <div class="card-body">
                     <h2>EduFácil</h2>
@@ -791,15 +1249,28 @@
                       data-es="Aplicación web diseñada para simplificar la administración de datos escolares. Resuelve la complejidad académica controlando el ciclo completo de registros de alumnos."
                       data-en="Web application designed to simplify school data management, handling student lifecycle and subject records."
                     >
-                      Aplicación web diseñada para simplificar la administración de datos escolares. Resuelve la complejidad académica controlando el ciclo completo de registros de alumnos.
+                      Aplicación web diseñada para simplificar la administración
+                      de datos escolares. Resuelve la complejidad académica
+                      controlando el ciclo completo de registros de alumnos.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/CRUD-Asignaturas-Alumnos" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/CRUD-Asignaturas-Alumnos"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="mobile">
                   <img src="img/nutrilife-ia.png" alt="Nutrilife IA" />
                   <div class="card-body">
                     <h2>Nutrilife IA Android</h2>
@@ -807,38 +1278,77 @@
                       data-es="El objetivo de NutriLife IA es ayudar a los usuarios a mejorar su salud mediante una herramienta gratuita y accesible, promoviendo hábitos saludables con Inteligencia Artificial."
                       data-en="NutriLife AI aims to help users improve health with an accessible AI-powered tool promoting healthy daily habits."
                     >
-                      El objetivo de NutriLife IA es ayudar a los usuarios a mejorar su salud mediante una herramienta gratuita y accesible, promoviendo hábitos saludables con Inteligencia Artificial.
+                      El objetivo de NutriLife IA es ayudar a los usuarios a
+                      mejorar su salud mediante una herramienta gratuita y
+                      accesible, promoviendo hábitos saludables con Inteligencia
+                      Artificial.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/NutriLife-IA-Android" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/NutriLife-IA-Android"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
 
               <div class="carousel-item">
-                <div class="card w-100">
+                <div class="card w-100" data-category="web">
                   <img src="img/logo-portafolio.jpg" alt="Portafolio Web" />
                   <div class="card-body">
-                    <h2 data-es="Portafolio Web" data-en="Web Portfolio">Portafolio Web</h2>
+                    <h2 data-es="Portafolio Web" data-en="Web Portfolio">
+                      Portafolio Web
+                    </h2>
                     <p
                       data-es="Portafolio profesional concebido para exhibir mi trayectoria. Desarrollado combinando Bootstrap 5 con un diseño de UI personalizado en CSS3 y lógica de control en JavaScript."
                       data-en="Professional portfolio designed to highlight my journey. Built using Bootstrap 5, custom CSS3 UI, and interactive JavaScript."
                     >
-                      Portafolio profesional concebido para exhibir mi trayectoria. Desarrollado combinando Bootstrap 5 con un diseño de UI personalizado en CSS3 y lógica de control en JavaScript.
+                      Portafolio profesional concebido para exhibir mi
+                      trayectoria. Desarrollado combinando Bootstrap 5 con un
+                      diseño de UI personalizado en CSS3 y lógica de control en
+                      JavaScript.
                     </p>
                   </div>
-                  <div class="btn-visitar"><a href="https://github.com/Roderiiich/Portafolio" target="_blank"><button data-es="Ver Repositorio" data-en="View Repository">Ver Repositorio</button></a></div>
+                  <div class="btn-visitar">
+                    <a
+                      href="https://github.com/Roderiiich/Portafolio"
+                      target="_blank"
+                      ><button
+                        data-es="Ver Repositorio"
+                        data-en="View Repository"
+                      >
+                        Ver Repositorio
+                      </button></a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carruselMobile" data-bs-slide="prev">
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carruselMobile"
+              data-bs-slide="prev"
+            >
               <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carruselMobile" data-bs-slide="next">
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carruselMobile"
+              data-bs-slide="next"
+            >
               <span class="carousel-control-next-icon"></span>
             </button>
           </div>
-
         </div>
       </section>
 
@@ -919,6 +1429,25 @@
                   Enviar Mensaje
                 </button>
               </form>
+              <div class="copiar-email-container text-center mb-4">
+                <span class="text-white-50">O escríbeme directamente a:</span>
+                <div
+                  class="d-inline-flex align-items-center gap-2 mt-2 px-3 py-2 rounded-pill glass-card"
+                >
+                  <i class="bi bi-envelope-fill text-primary"></i>
+                  <span id="email-texto" class="fw-semibold text-white"
+                    >r.cortescartes@gmail.com</span
+                  >
+                  <button
+                    id="btn-copiar-email"
+                    class="btn btn-sm btn-outline-primary rounded-pill border-0"
+                    data-bs-toggle="tooltip"
+                    title="Copiar al portapapeles"
+                  >
+                    <i class="bi bi-clipboard"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

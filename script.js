@@ -104,7 +104,96 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================================================
-// FONDO ANIMADO DE NODOS NEÓN (RESPONSIVE ADAPTATIVO)
+// LÓGICA DE FILTRADO DE PROYECTOS (REAGRUPAMIENTO FLUIDO SIN DESORDENAR)
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.btn-filtro');
+    const carruselPCInner = document.querySelector('#carruselPC .carousel-inner');
+    const carruselMobileInner = document.querySelector('#carruselMobile .carousel-inner');
+
+    if (!filterButtons.length || !carruselPCInner || !carruselMobileInner) return;
+
+    // Guardar el estado inicial intacto de ambos carruseles
+    const originalPCHTML = carruselPCInner.innerHTML;
+    const originalMobileHTML = carruselMobileInner.innerHTML;
+
+    // Extraer todas las tarjetas únicas del HTML original
+    const initialCards = Array.from(carruselMobileInner.querySelectorAll('.card[data-category]'));
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            if (filterValue === 'all') {
+                // Restaurar carruseles originales intactos
+                carruselPCInner.innerHTML = originalPCHTML;
+                carruselMobileInner.innerHTML = originalMobileHTML;
+            } else {
+                // Obtener solo las tarjetas que coinciden con el filtro
+                const filteredCards = initialCards.filter(card => card.getAttribute('data-category') === filterValue);
+
+                if (filteredCards.length === 0) return;
+
+                // 1. Reconstruir Carrusel de Móvil (1 tarjeta por diapositiva)
+                let mobileHTML = '';
+                filteredCards.forEach((card, index) => {
+                    const activeClass = index === 0 ? 'active' : '';
+                    mobileHTML += `
+                        <div class="carousel-item ${activeClass}">
+                            ${card.outerHTML}
+                        </div>`;
+                });
+                carruselMobileInner.innerHTML = mobileHTML;
+
+                // 2. Reconstruir Carrusel de PC (Agrupados de a 3 por diapositiva)
+                let pcHTML = '';
+                for (let i = 0; i < filteredCards.length; i += 3) {
+                    const group = filteredCards.slice(i, i + 3);
+                    const activeClass = i === 0 ? 'active' : '';
+
+                    pcHTML += `<div class="carousel-item ${activeClass}"><div class="row g-4 justify-content-center">`;
+                    group.forEach(card => {
+                        pcHTML += `
+                            <div class="col-md-4 d-flex">
+                                ${card.outerHTML}
+                            </div>`;
+                    });
+                    pcHTML += `</div></div>`;
+                }
+                carruselPCInner.innerHTML = pcHTML;
+            }
+
+            // Reiniciar instancias de Bootstrap Carousel para que reconozcan la nueva estructura
+            const pcCarouselEl = document.getElementById('carruselPC');
+            const mobileCarouselEl = document.getElementById('carruselMobile');
+
+            if (pcCarouselEl && window.bootstrap) {
+                bootstrap.Carousel.getOrCreateInstance(pcCarouselEl).to(0);
+            }
+            if (mobileCarouselEl && window.bootstrap) {
+                bootstrap.Carousel.getOrCreateInstance(mobileCarouselEl).to(0);
+            }
+        });
+    });
+});
+
+// ==========================================================================
+// INICIALIZACIÓN DE TOOLTIPS (MICROINTERACCIONES EN STACK)
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.forEach(tooltipTriggerEl => {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+
+// ==========================================================================
+// FONDO ANIMADO DE NODOS NEÓN
 // ==========================================================================
 
 function initBgCanvas() {
@@ -113,8 +202,7 @@ function initBgCanvas() {
 
     const ctx = bgCanvas.getContext('2d');
     let particles = [];
-    
-    // Adaptar densidad según el tamaño de pantalla
+
     const isMobile = (window.innerWidth || document.documentElement.clientWidth) <= 768;
     const numParticles = isMobile ? 35 : 80;
     const maxDistance = isMobile ? 110 : 160;
@@ -127,7 +215,6 @@ function initBgCanvas() {
     resizeBg();
     window.addEventListener('resize', resizeBg);
 
-    // Crear partículas
     for (let i = 0; i < numParticles; i++) {
         particles.push({
             x: Math.random() * bgCanvas.width,
@@ -187,3 +274,14 @@ if (document.readyState === 'loading') {
 } else {
     initBgCanvas();
 }
+
+document.getElementById('btn-copiar-email')?.addEventListener('click', () => {
+  const email = document.getElementById('email-texto').textContent;
+  navigator.clipboard.writeText(email).then(() => {
+    const btn = document.getElementById('btn-copiar-email');
+    btn.innerHTML = '<i class="bi bi-check2 text-success"></i>';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="bi bi-clipboard"></i>';
+    }, 2000);
+  });
+});
